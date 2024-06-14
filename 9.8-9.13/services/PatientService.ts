@@ -1,5 +1,5 @@
 import patientData from "../data/patients";
-import { patient, withoutSSN, postPatient, gender } from "../types";
+import { patient, withoutSSN, postPatient } from "../types";
 import { v1 as uuid } from "uuid";
 
 function getPatient(): patient[] {
