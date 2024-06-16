@@ -4,20 +4,18 @@ import { diary } from "../types";
 import { apiBaseUrl } from "../constants";
 
 const getAll = async () => {
-  const { data } = await axios.get<diary[]>(`${apiBaseUrl}/patients`);
+  const { data } = await axios.get<diary[]>(`${apiBaseUrl}/diaries`);
 
   return data;
 };
 
-// const create = async (object: PatientFormValues) => {
-//   const { data } = await axios.post<Patient>(
-//     `${apiBaseUrl}/patients`,
-//     object
-//   );
+const create = async (object: diary) => {
+  const { data } = await axios.post<diary>(`${apiBaseUrl}/diaries`, object);
 
-//   return data;
-// };
+  return data;
+};
 
-// export default {
-//   getAll, create
-// };
+export default {
+  getAll,
+  create,
+};
